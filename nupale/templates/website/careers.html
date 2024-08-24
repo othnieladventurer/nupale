@@ -1,0 +1,188 @@
+{% extends 'website/base.html' %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+<section class="hero section dark-background">
+
+    <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+        <img src="{% static 'assets/img/careers.jpg' %}" alt="contact_page">
+        <div class="carousel-container">
+            <h2>Explore Our Careers Opportunity</h2>
+            <p>Join Nu-Pale LLC and take the next step in your career. We offer rewarding opportunities in a vibrant and supportive environment where your skills and passion for language services can make a real impact.</p>
+
+        </div>
+        </div><!-- End Carousel Item -->
+
+    </div>
+
+</section><!-- /Hero Section -->
+
+
+<section class="section section-job-list " style="background-color: #eee;">
+    <div class="container bg-white p-3">
+
+        <div class="col-md-10">
+            {% if job %}
+            <form class="filter-form mt-5 mb-4">
+                <div class="row">
+                
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                        <label for="jobPosition">Position :</label>
+                        <select id="jobPosition" class="custom-select">
+                            <option value="position1">Business</option>
+                            <option value="position2">Design</option>
+                            <option value="position3">Development</option>
+                            <option value="position4">Engineering</option>
+                            <option value="position5">Finance</option>
+                            <option value="position6">Marketing</option>
+                        </select>
+                        </div>
+                    </div>
+
+                
+                    <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                    <label for="jobLocation">Location : </label>
+                    <select id="jobLocation" class="custom-select">
+                        <option value="location1">Chicago, US</option>
+                        <option value="location3">Michigan, US</option>
+                        <option value="location2">New York, US</option>
+                        <option value="location4">Los Angles, US</option>
+                        <option value="location5">Moscow, Russia</option>
+                        <option value="location6">Sydney, Australia</option>
+                        <option value="location7">Birmingham, UK</option>
+                        <option value="location8">Manchester, UK</option>
+                        <option value="location9">Beijing, China</option>
+                    </select>
+                    </div>
+                </div>
+
+                </div>
+            </form>
+            {% endif %}
+
+            <div class="job-list__wrapper mb-6">
+                
+
+                <a href="" class="card p-0 mb-3 border-0 shadow-sm shadow--on-hover">
+                <div class="card-body">
+                    <h3 class="mb-4 fw-bold">Interpreter:</h3>
+                    {% if job %}
+                    <span class="row justify-content-between align-items-center">
+                    <span class="col-md-5 color--heading">
+                        <span class="badge badge-circle background--danger text-white mr-3">GD</span> Senior Graphic Designer
+                    </span>
+
+                    <span class="col-5 col-md-3 my-3 my-sm-0 color--text">
+                        <i class="fas fa-clock mr-1"></i> Full time
+                    </span>
+
+                    <span class="col-7 col-md-3 my-3 my-sm-0 color--text">
+                        <i class="fas fa-map-marker-alt mr-1"></i> San Fransisco, US
+                    </span>
+
+                    <span class="d-none d-md-block col-1 text-center color--text">
+                        <small><i class="fas fa-chevron-right"></i></small>
+                    </span>
+                    </span>
+                    {% else %}
+                    <span class="row justify-content-between align-items-center">
+                        <span class="col-md-5 color--heading">
+                            No open position available for Now!
+                        </span>
+    
+                    
+                    
+    
+                        <span class="d-none d-md-block col-1 text-center color--text">
+                        <small><i class="fas fa-chevron-right"></i></small>
+                        </span>
+                    </span>
+
+                    {% endif %}
+                </div>
+                </a> <!-- Job Card -->
+
+            
+
+                
+            </div><br>
+
+
+
+            <div class="job-list__wrapper mb-6">
+                
+
+                <a href="" class="card p-0 mb-3 border-0 shadow-sm shadow--on-hover">
+                <div class="card-body">
+                    <h3 class="mb-4 fw-bold">Corporate:</h3>
+                    {% if job %}
+                    <span class="row justify-content-between align-items-center">
+                    <span class="col-md-5 color--heading">
+                        <span class="badge badge-circle background--danger text-white mr-3">GD</span> Senior Graphic Designer
+                    </span>
+
+                    <span class="col-5 col-md-3 my-3 my-sm-0 color--text">
+                        <i class="fas fa-clock mr-1"></i> Full time
+                    </span>
+
+                    <span class="col-7 col-md-3 my-3 my-sm-0 color--text">
+                        <i class="fas fa-map-marker-alt mr-1"></i> San Fransisco, US
+                    </span>
+
+                    <span class="d-none d-md-block col-1 text-center color--text">
+                        <small><i class="fas fa-chevron-right"></i></small>
+                    </span>
+                    </span>
+                    {% else %}
+                    <span class="row justify-content-between align-items-center">
+                        <span class="col-md-5 color--heading">
+                            No open position available for Now!
+                        </span>
+    
+                    
+                    
+    
+                        <span class="d-none d-md-block col-1 text-center color--text">
+                        <small><i class="fas fa-chevron-right"></i></small>
+                        </span>
+                    </span>
+
+                    {% endif %}
+                </div>
+                </a> <!-- Job Card -->
+
+            
+
+                
+            </div><br>
+
+
+
+         
+
+      </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+

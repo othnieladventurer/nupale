@@ -1,0 +1,73 @@
+
+{% load static %}
+<footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="/" class="logo d-flex align-items-center">
+			<img src="{% static 'assets/img/nupale_logo_2.png' %}" alt="logo">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Moon Lake Dr</p>
+            <p>Florida, Naples 33104</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+Available soon</span></p>
+            <p><strong>Email:</strong> <span>contact@nupale.com</span></p>
+          </div>
+          
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Pages</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'nupale:careers' %}">Careers</a></li>
+            <li><a href="{% url 'nupale:contact' %}">Contact</a></li>
+            <li><a href="{% url 'nupale:terms' %}">Terms of service</a></li>
+            <li><a href="{% url 'nupale:privacy' %}">Privacy policy</a></li>
+          </ul>
+        </div>
+
+		<div class="col-lg-2 col-md-3 footer-links">
+			<h4>Follow Us</h4>
+			<div class="social-links d-flex mt-4">
+				<!--<a href=""><i class="bi bi-twitter-x"></i></a>-->
+			 	<a  href="https://web.facebook.com/profile.php?id=61562961916283">
+					<img src="{% static 'assets/img/icons8-facebook-48.png' %}" alt="facebook icon">
+				</a>
+
+			 	<a href="https://www.instagram.com/nupale_/">
+					<img src="{% static 'assets/img/icons8-instagram-48.png' %}" alt="facebook icon">
+					
+				</a>
+				<!-- <a href=""><i class="bi bi-linkedin"></i></a>-->
+		   </div>
+		</div>
+
+        
+        <div class="col-lg-4 col-md-12 footer-newsletter float-end">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Nu-Pale LLC</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+       <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+      </div>
+    </div>
+
+  </footer>
