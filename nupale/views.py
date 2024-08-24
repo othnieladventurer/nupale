@@ -4,12 +4,11 @@ from django.core.mail import send_mail
 
 from .forms import *
 
-from .models import *
 
 # Create your views here.
 
 
-
+@cache_page(60 * 5)
 def index(request):
     form = ContactForm()
 
@@ -49,6 +48,7 @@ def index(request):
 
 
 
+@cache_page(60 * 5)
 def services(request):
     return render(request, 'website/services.html')
 
@@ -56,6 +56,7 @@ def services(request):
 
 
  
+@cache_page(60 * 5)
 def career(request):
     return render(request, 'website/careers.html')
 
@@ -64,12 +65,14 @@ def career(request):
 
 
 
+@cache_page(60 * 5)
 def about(request):
     return render(request, 'website/about.html')
 
 
 
 
+@cache_page(60 * 5)
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -112,12 +115,14 @@ def contact(request):
 
 
 
+@cache_page(60 * 5)
 def privacy_policy(request):
     return render(request, 'website/privacy_policy.html')
 
 
 
 
+@cache_page(60 * 5)
 def terms(request):
     return render(request, 'website/terms.html')
 

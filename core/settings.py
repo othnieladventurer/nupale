@@ -124,6 +124,19 @@ DATABASES = {
 }
 
 
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+    }
+}
+
+
+
+CACHE_MIDDLEWARE_SECONDS = 600  # Cache duration in seconds (e.g., 10 minutes)
+CACHE_MIDDLEWARE_KEY_PREFIX = ''  # Prefix for the cache key
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
