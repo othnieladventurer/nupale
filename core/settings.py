@@ -84,6 +84,12 @@ ROOT_URLCONF = 'core.urls'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
+CORS_ALLOWED_ORIGINS = [
+    'http://nupale.com',
+    'https://example2.com',
+    'http://localhost:8000',
+]
+
 
 TEMPLATES = [
     {
