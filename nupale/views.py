@@ -8,7 +8,6 @@ from .forms import *
 # Create your views here.
 
 
-@cache_page(60 * 5)
 def index(request):
     form = ContactForm()
 
@@ -56,7 +55,7 @@ def services(request):
 
 
  
-@cache_page(60 * 5)
+
 def career(request):
     return render(request, 'website/careers.html')
 
@@ -65,14 +64,14 @@ def career(request):
 
 
 
-@cache_page(60 * 5)
+
 def about(request):
     return render(request, 'website/about.html')
 
 
 
 
-@cache_page(60 * 5)
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -115,14 +114,56 @@ def contact(request):
 
 
 
-@cache_page(60 * 5)
+#@cache_page(60 * 5)
+def quote(request):
+    if request.method == 'POST':
+        form = QuoteCreationForm(request.POST)
+        if form.is_valid():
+            # Extract form data
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            subject = form.cleaned_data['subject']
+            email = form.cleaned_data['email']
+            phone_number = form.cleaned_data.get('phone_number')
+            address = form.cleaned_data.get('address')
+            description = form.cleaned_data['description']
+            
+            # Compose email
+            email_subject = f"Contact Form Submission: {subject}"
+            email_message = (
+                f"Name: {first_name} {last_name}\n"
+                f"Email: {email}\n"
+                f"Phone: {phone_number}\n"
+                f"Address: {address}\n\n"
+                f"Description:\n{description}"
+            )
+            email_from = email  # Reply to the sender
+            recipient_list = ['your_outlook_email@example.com']
+            
+            # Send email
+            send_mail(email_subject, email_message, email_from, recipient_list)
+            
+            return render(request, 'contact_success.html')  # Redirect or render a success page
+
+    else:
+        form = QuoteCreationForm()
+    
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'website/quote_request.html', context)
+
+
+
+#@cache_page(60 * 5)
 def privacy_policy(request):
     return render(request, 'website/privacy_policy.html')
 
 
 
 
-@cache_page(60 * 5)
+#@cache_page(60 * 5)
 def terms(request):
     return render(request, 'website/terms.html')
 

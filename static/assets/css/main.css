@@ -2504,3 +2504,27 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+
+
+
+.contact-form {
+  display: flex;
+  margin-top: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #df1529;
+  padding: 120px;
+
+}
+
+
+.contact-form h2{
+  color: #df1529;
+  font-weight: bold;
+
+
+}
+
+
