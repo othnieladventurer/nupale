@@ -9,6 +9,10 @@ from .forms import *
 
 
 def index(request):
+    title = 'Home | Nupale'
+    meta_description = 'Nu Pale is your go-to for interpretation and translation services. We specialize in French, Creole, English, and Spanish, offering reliable, accurate, and professional solutions.'
+    meta_keywords = 'Interpreter services, Translator services, On site, Over the phone'
+    
     form = ContactForm()
 
     if request.method == 'POST':
@@ -38,6 +42,9 @@ def index(request):
     
     context = {
         'form': form,
+        'title':title,
+        'meta_description': meta_description,
+        'meta_keywords': meta_keywords
     }
 
     return render(request, 'website/index.html', context)
